@@ -6,6 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
+/**
+ * @author Santhosh
+ *
+ */
 @SpringBootApplication
 @EnableJpaRepositories("com.tracker.repo") 
 @EntityScan("com.tracker.entity")

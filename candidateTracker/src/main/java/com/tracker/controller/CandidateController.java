@@ -18,6 +18,9 @@ import com.tracker.entity.Candidate;
 import com.tracker.service.CandidateService;
 
 /**
+ * 
+ * Default controller for {@link Candidate} API's
+ * 
  * @author Santhosh
  *
  */
