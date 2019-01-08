@@ -37,6 +37,9 @@ public class CandidateServiceImpl implements CandidateService {
 	 * @see com.tracker.service.CandidateService#getCandidateById(java.lang.Long)
 	 */
 	public Candidate getCandidateById(Long id) {
+		if (id == null) {
+			throw new IllegalArgumentException("Candidate object can not be null");
+		}
 		Optional<Candidate> candidate = candidateRepo.findById(id);
 		return candidate.isPresent() ? candidate.get() : null;
 	}
