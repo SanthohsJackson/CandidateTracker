@@ -15,6 +15,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.tracker.entity.Candidate;
 import com.tracker.service.CandidateService;
 
+/**
+ * @author Santhosh
+ *
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CandidateServiceTest {

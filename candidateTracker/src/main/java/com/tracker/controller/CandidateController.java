@@ -29,7 +29,10 @@ public class CandidateController {
 	private CandidateService candidateService;
 
 	/**
-	 * @return
+	 * 
+	 * API that returns list of all the candidates present.
+	 * 
+	 * @return List<{@link Candidate}>
 	 */
 	@GetMapping("/")
 	public List<Candidate> getAllCandidates() {
@@ -37,14 +40,24 @@ public class CandidateController {
 	}
 
 	/**
+	 * 
+	 * API that return the candidate information based on the id provided.
+	 * 
 	 * @param id
-	 * @return
+	 * @return {@link Candidate}
 	 */
 	@GetMapping("/{id}")
 	public Candidate getCandidateById(@PathVariable Long id) {
 		return candidateService.getCandidateById(id);
 	}
 
+	/**
+	 * 
+	 * API that saves the candidate information.
+	 * 
+	 * @param candidate
+	 * @return {@link Candidate}
+	 */
 	@PostMapping("/")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Candidate saveCandidate(@RequestBody Candidate candidate) {
@@ -52,9 +65,12 @@ public class CandidateController {
 	}
 
 	/**
+	 * 
+	 * API that update the candidate information based on the id provided.
+	 * 
 	 * @param candidate
 	 * @param id
-	 * @return
+	 * @return {@link Candidate}
 	 */
 	@PutMapping("/{id}")
 	public Candidate updateCandidate(@RequestBody Candidate candidate, @PathVariable Long id) {
@@ -62,8 +78,11 @@ public class CandidateController {
 	}
 
 	/**
+	 * 
+	 * API that deletes the candidate information.
+	 * 
 	 * @param id
-	 * @return
+	 * @return {@link Candidate}
 	 */
 	@DeleteMapping("/{id}")
 	public Candidate deleteCandidate(@PathVariable Long id) {

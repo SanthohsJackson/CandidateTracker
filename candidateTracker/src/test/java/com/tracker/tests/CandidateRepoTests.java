@@ -17,6 +17,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.tracker.entity.Candidate;
 import com.tracker.repo.CandidateRepo;
 
+/**
+ * @author Santhosh
+ *
+ */
 @RunWith(SpringRunner.class)
 @DataJpaTest
 public class CandidateRepoTests {

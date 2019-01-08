@@ -5,6 +5,8 @@ import java.util.List;
 import com.tracker.entity.Candidate;
 
 /**
+ * Service interface for @{@link Candidate} operations.
+ * 
  * @author Santhosh
  *
  */
@@ -34,7 +36,7 @@ public interface CandidateService {
 	public Candidate saveCandidate(Candidate candidate);
 
 	/**
-	 * Updated the candidate information.
+	 * Updates the candidate information.
 	 * 
 	 * @param Candidate
 	 * @param id

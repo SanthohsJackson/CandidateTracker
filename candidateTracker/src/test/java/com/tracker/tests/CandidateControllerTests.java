@@ -22,6 +22,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tracker.entity.Candidate;
 
 
+/**
+ * @author Santhosh
+ *
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest()
 @AutoConfigureMockMvc

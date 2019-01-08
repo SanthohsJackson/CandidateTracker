@@ -5,6 +5,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * Entity class for candidate information.
+ * 
+ * @author Santhosh
+ *
+ */
 @Entity
 public class Candidate {
 

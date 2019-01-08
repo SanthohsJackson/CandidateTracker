@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,11 +13,15 @@ import com.tracker.entity.Candidate;
 import com.tracker.repo.CandidateRepo;
 
 /**
+ * 
+ * Default service implementation for {@link CandidateService}
  * @author Santhosh
  *
  */
 @Service
 public class CandidateServiceImpl implements CandidateService {
+
+	Logger LOGGER = LoggerFactory.getLogger(CandidateServiceImpl.class);
 
 	@Autowired
 	private CandidateRepo candidateRepo;
@@ -28,6 +34,7 @@ public class CandidateServiceImpl implements CandidateService {
 	public List<Candidate> getAllCandidates() {
 		List<Candidate> candidates = new ArrayList<>();
 		candidateRepo.findAll().forEach(candidate -> candidates.add(candidate));
+		LOGGER.debug("Fetched {} candidates information", candidates.size());
 		return candidates;
 	}
 
@@ -54,6 +61,7 @@ public class CandidateServiceImpl implements CandidateService {
 		if (candidate == null) {
 			throw new IllegalArgumentException("Candidate object can not be null");
 		}
+		LOGGER.debug("Saving candidate information with name {}", candidate.getName());
 		return candidateRepo.save(candidate);
 	}
 
@@ -67,7 +75,6 @@ public class CandidateServiceImpl implements CandidateService {
 		if (id == null) {
 			throw new IllegalArgumentException("Candidate Id can not be null");
 		}
-
 		if (candidate == null) {
 			throw new IllegalArgumentException("Candidate object can not be null");
 		}
@@ -77,6 +84,7 @@ public class CandidateServiceImpl implements CandidateService {
 		if (!candidateRepo.existsById(id)) {
 			throw new IllegalArgumentException("No candidate with id " + id + " was found");
 		}
+		LOGGER.debug("Updating candidate information with id {}", id);
 		return candidateRepo.save(candidate);
 	}
 
@@ -95,6 +103,7 @@ public class CandidateServiceImpl implements CandidateService {
 		} else {
 			throw new IllegalArgumentException("No candidate with id " + id + " was found");
 		}
+		LOGGER.debug("Deleting candidate information with id {}", id);
 		return candidate.get();
 	}
 
