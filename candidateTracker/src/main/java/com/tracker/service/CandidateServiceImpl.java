@@ -95,7 +95,6 @@ public class CandidateServiceImpl implements CandidateService {
 		} else {
 			throw new IllegalArgumentException("No candidate with id " + id + " was found");
 		}
-
 		return candidate.get();
 	}
 
