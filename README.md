@@ -1,1 +1,2 @@
 # CandidateTracker
+Tracks Candidate Information
